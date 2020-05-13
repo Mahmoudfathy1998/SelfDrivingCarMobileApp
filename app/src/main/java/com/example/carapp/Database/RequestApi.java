@@ -130,6 +130,40 @@ public class RequestApi {
 
     }
 
+    public void selectReportsApi(final VolleyCallBack callback, final String tableName, HashMap<String, String> conditions) {
+
+        Gson gson = new Gson();
+        final String con = gson.toJson(conditions);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://selfdrivingcarserver.000webhostapp.com/selectreport.php", new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                callback.onSuccess(response);
+                //System.out.println("hhsss"+response);
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                        callback.onError(error.getMessage());
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> param = new HashMap<String, String>();
+                param.put("table", tableName);
+                param.put("conditions", con);
+
+                return param;
+            }
+        };
+
+        VolleySingleton.getnInstance(context).addRequestQue(stringRequest);
+    }
+
 
 }
 

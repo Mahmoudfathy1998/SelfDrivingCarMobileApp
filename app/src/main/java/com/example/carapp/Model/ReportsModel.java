@@ -26,7 +26,7 @@ public class ReportsModel {
 
     public static void selectReports(HashMap<String, String> con, final SelectReportCallBack selectReportCallBack){
 
-        requestApi.selectApi(new VolleyCallBack() {
+        requestApi.selectReportsApi(new VolleyCallBack() {
             @Override
             public void onSuccess(String result) {
                 System.out.println(result);
@@ -77,7 +77,7 @@ public class ReportsModel {
             public void onError(String error) {
                 selectReportCallBack.onfailure(error);
             }
-        }, "userreports", con);
+        }, "reports", con);
 
     }
 }

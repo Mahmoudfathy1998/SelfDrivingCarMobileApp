@@ -31,7 +31,9 @@ public class Reports extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
+        reportsController = new ReportsController(this);
         userID = intent.getStringExtra("UserID" );
+        showReports(userID);
         //System.out.println("He5HE5O ID = "+ userID);
 
         super.onCreate(savedInstanceState);

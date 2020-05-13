@@ -67,7 +67,9 @@ public class DriverActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openReports(){
-        Integer UserID = this.user.getId();
+        Integer userID = this.user.getId();
+        String UserID = Integer.toString(userID);
+        System.out.println("HE5O ID = "+ UserID);
         Intent intent = new Intent(this, Reports.class);
         intent.putExtra("UserID", UserID );
         startActivity(intent);
