@@ -1,8 +1,9 @@
 package com.example.carapp.Entites;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Car {
+public class Car   implements Serializable {
 
     private int id;
     private String serialNumber;

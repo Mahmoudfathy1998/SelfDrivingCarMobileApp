@@ -5,6 +5,7 @@ import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.carapp.Controller.CallBacks.InsertUserCallBack;
 import com.example.carapp.Controller.CallBacks.LoginCallBack;
 import com.example.carapp.Controller.CallBacks.SelectCarCallBack;
 import com.example.carapp.Controller.CallBacks.SelectUsersListCallBack;
@@ -22,7 +23,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class UserModel {
 
@@ -43,7 +43,6 @@ public class UserModel {
         requestApi.selectApi(new VolleyCallBack() {
             @Override
             public void onSuccess(String result) {
-System.out.println(result);
                 try {
                     JSONObject obj = new JSONObject(result);
                     // error, meessage , array
@@ -69,7 +68,33 @@ System.out.println(result);
                             @Override
                             public void onSuccess(UserType userType) {
                                 user.setUsertype(userType);
-                               loginCallBack.onSuccess(user);
+
+                                if(userType.getId() == 2){
+                                    try {
+                                        final HashMap<String, String> userCar = new HashMap<>();
+                                        userCar.put("userID", String.valueOf(userObject.getInt("ID")));
+
+                                        carmodel.selectCar(userCar, new SelectCarCallBack() {
+                                            @Override
+                                            public void onSuccess(Car car) {
+                                                user.setCar(car);
+                                                loginCallBack.onSuccess(user);
+                                            }
+
+                                            @Override
+                                            public void onFailer(String error) {
+                                                loginCallBack.onFailer(error);
+                                            }
+                                        });
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                                else{
+                                    loginCallBack.onSuccess(user);
+                                }
+
+
                             }
 
                             @Override
@@ -97,7 +122,7 @@ System.out.println(result);
 
     }
 
-    public void selectUsersList(HashMap<String, String> con, final SelectUsersListCallBack selectUsersListCallBack){
+    public void selectUsersList(final HashMap<String, String> con, final SelectUsersListCallBack selectUsersListCallBack){
 
         requestApi.selectApi(new VolleyCallBack() {
             @Override
@@ -130,8 +155,30 @@ System.out.println(result);
                                 @Override
                                 public void onSuccess(UserType userType) {
                                     user.setUsertype(userType);
-                                    userArrayList.add(user);
-                                    selectUsersListCallBack.onSuccess(userArrayList);
+
+
+                                    try {
+                                        final HashMap<String, String> userCar = new HashMap<>();
+                                        userCar.put("userID", String.valueOf(userObject.getInt("ID")));
+
+                                        carmodel.selectCar(userCar, new SelectCarCallBack() {
+                                            @Override
+                                            public void onSuccess(Car car) {
+                                                user.setCar(car);
+                                                userArrayList.add(user);
+                                                selectUsersListCallBack.onSuccess(userArrayList);
+                                            }
+
+                                            @Override
+                                            public void onFailer(String error) {
+                                                selectUsersListCallBack.onError(error);
+                                            }
+                                        });
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+
+
                                 }
 
                                 @Override
@@ -141,14 +188,9 @@ System.out.println(result);
                                 }
                             });
 
-
                         }
 
-
-
                     }
-
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -164,7 +206,7 @@ System.out.println(result);
 
     }
 
-    public void insertUser(final HashMap<String, String> con, final VolleyCallBack insertCallBack ){
+    public void insertUser(final HashMap<String, String> con, final InsertUserCallBack insertCallBack ){
 
         requestApi.insertApi(new VolleyCallBack() {
             @Override
@@ -177,7 +219,7 @@ System.out.println(result);
 
 
                     if(object.getBoolean("error")){
-                        insertCallBack.onError(object.getString("message")); //check 3al db
+                        insertCallBack.onFailer(object.getString("message")); //check 3al db
                         System.out.println("IM ERROR 7ODA");
 
                     }else{
@@ -194,8 +236,7 @@ System.out.println(result);
 
                         SendMail Passmail = new SendMail(context, mail, "TestMail", "Welcome "+name+ ", Your password is '" +pass+"'");
                         Passmail.execute();
-                        insertCallBack.onSuccess(object.getString("message"));
-
+                        insertCallBack.onSuccess(object.getString("message"), object.getInt("id"));
                     }
 
                 } catch (JSONException e) {
@@ -205,7 +246,7 @@ System.out.println(result);
 
             @Override
             public void onError(String error) {
-                insertCallBack.onError(error);//network,API
+                insertCallBack.onFailer(error);//network,API
             }
         }, "users",con);
 
@@ -236,4 +277,5 @@ System.out.println(result);
         },"users",data,con);
 
     }
+
 }

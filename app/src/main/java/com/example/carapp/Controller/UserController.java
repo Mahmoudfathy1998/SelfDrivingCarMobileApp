@@ -3,6 +3,7 @@ package com.example.carapp.Controller;
 import android.content.Context;
 import android.util.Log;
 
+import com.example.carapp.Controller.CallBacks.InsertUserCallBack;
 import com.example.carapp.Controller.CallBacks.LoginCallBack;
 import com.example.carapp.Controller.CallBacks.SelectUsersListCallBack;
 import com.example.carapp.Database.VolleyCallBack;
@@ -46,7 +47,7 @@ public class UserController {
 
     }
 
-    public void insertUser(String firstName, String lastName, String email, final VolleyCallBack insertCallBack){
+    public void insertUser(String firstName, String lastName, String email, final InsertUserCallBack insertCallBack){
 
         HashMap<String, String> con = new HashMap<>();
         con.put("Firstname", firstName);
@@ -55,19 +56,20 @@ public class UserController {
         con.put("Password", generatePassword(10)); // auto generated later
         con.put("UsertypeID", "2");
 
-        userModel.insertUser(con, new VolleyCallBack() {
+        userModel.insertUser(con, new InsertUserCallBack() {
             @Override
-            public void onSuccess(String result) {
-                insertCallBack.onSuccess(result);
+            public void onSuccess(String result, int id) {
+                insertCallBack.onSuccess(result, id);
             }
 
             @Override
-            public void onError(String error) {
-                insertCallBack.onError(error);
+            public void onFailer(String error) {
+                insertCallBack.onFailer(error);
             }
         });
 
     }
+
     private static String generatePassword(final int passwordSize){
         final Random random=new Random();
         final StringBuilder sb=new StringBuilder(passwordSize);

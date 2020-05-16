@@ -9,8 +9,8 @@ public class User implements Serializable {
     private String lastName;
     private String email;
     private String password;
-    private ArrayList<Car> userCars = new ArrayList<>();
     private UserType usertype;
+    private Car car;
 
     public int getId() {
         return id;
@@ -60,11 +60,11 @@ public class User implements Serializable {
         this.usertype = usertype;
     }
 
-    public ArrayList<Car> getUserCars() {
-        return userCars;
+    public Car getCar() {
+        return car;
     }
 
-    public void setUserCars(ArrayList<Car> userCars) {
-        this.userCars = userCars;
+    public void setCar(Car car) {
+        this.car = car;
     }
 }

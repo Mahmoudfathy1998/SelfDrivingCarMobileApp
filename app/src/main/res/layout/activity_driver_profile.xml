@@ -31,7 +31,9 @@
                 android:layout_height="wrap_content"/>
 
         </RelativeLayout>
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
         <LinearLayout
             android:layout_marginTop="10dp"
             android:padding="16dp"
@@ -41,27 +43,37 @@
             android:layout_width="360dp"
             android:layout_height="match_parent">
 
-
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginTop="260dp"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_centerHorizontal="true"
+                android:enabled="true"
+                android:id="@+id/Firstname"
+                android:hint="Firstanme:"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
             <EditText
                 android:textAlignment="center"
                 android:layout_marginTop="5dp"
                 android:textColor="@android:color/black"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@id/image_view"
+                android:layout_below="@id/Firstname"
                 android:enabled="true"
                 android:id="@+id/userFirstname"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"/>
-            <EditText
+            <TextView
                 android:textAlignment="center"
                 android:layout_marginTop="5dp"
                 android:textColor="@android:color/black"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@id/userFirstname"
                 android:enabled="true"
-                android:id="@+id/userLasttname"
+                android:id="@+id/Lastname"
+                android:hint="Lastname:"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"/>
             <EditText
@@ -70,9 +82,42 @@
                 android:textColor="@android:color/black"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@id/userLasttname"
+                android:layout_below="@id/Lastname"
+                android:enabled="true"
+                android:id="@+id/userLasttname"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_centerHorizontal="true"
+                android:enabled="true"
+                android:id="@+id/Email"
+                android:hint="Email:"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/Email"
                 android:enabled="true"
                 android:id="@+id/userEmail"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_centerHorizontal="true"
+                android:enabled="true"
+                android:id="@+id/Password"
+                android:hint="Password:"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"/>
             <EditText
@@ -84,6 +129,54 @@
                 android:layout_below="@id/userEmail"
                 android:enabled="true"
                 android:id="@+id/userPassword"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_centerHorizontal="true"
+                android:enabled="true"
+                android:id="@+id/SerialNum"
+                android:hint="SerialNum:"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/SerialNum"
+                android:enabled="true"
+                android:id="@+id/carSerialNum"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_centerHorizontal="true"
+                android:enabled="true"
+                android:id="@+id/Model"
+                android:hint="ModelName:"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/Model"
+                android:enabled="true"
+                android:id="@+id/Modelname"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"/>
 
@@ -99,7 +192,7 @@
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
-
+    </ScrollView>
     </RelativeLayout>
 
 </LinearLayout>

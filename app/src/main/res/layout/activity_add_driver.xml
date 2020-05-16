@@ -67,17 +67,53 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 />
+            <EditText
+                android:id="@+id/carSerialNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@android:drawable/ic_menu_myplaces"
+                android:ems="10"
+                android:hint="Car Serial Number"
+                android:inputType="text"
+                android:textColorHint="#000"
+                android:maxLines="1"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="10dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                />
+            <EditText
+                android:id="@+id/carModel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@android:drawable/ic_menu_myplaces"
+                android:ems="10"
+                android:hint="Car Model"
+                android:inputType="text"
+                android:textColorHint="#000"
+                android:maxLines="1"
+                android:drawablePadding="12dp"
+                android:padding="8dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="10dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                />
             <Button
                 android:textColor="#fff"
                 android:background="@drawable/background_signup"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:layout_marginLeft="10dp"
                 android:id="@+id/addBTN"
-                android:text="Bumps"/>
+                android:text="Add Driver"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

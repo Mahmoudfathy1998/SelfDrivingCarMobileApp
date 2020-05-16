@@ -26,7 +26,7 @@ public abstract class baseProfile extends AppCompatActivity implements View.OnCl
     private UserController userController;
     protected User user;
 
-    protected void setBasicSettings(){
+    protected void setBasicSettings(){ //btgm3 functions ytndo m3a b3d
 
         userController = new UserController(context);
         initAllViews();
@@ -121,7 +121,7 @@ public abstract class baseProfile extends AppCompatActivity implements View.OnCl
     public abstract void updateProfileData();
     private void updateUserProfileData(){
         if(!userHashmap.isEmpty()){
-            System.out.println(userHashmap.size());
+           // System.out.println(userHashmap.size());
             userController.updateUser(userHashmap, user.getId(), new VolleyCallBack() {
                 @Override
                 public void onSuccess(String success) {
@@ -136,7 +136,8 @@ public abstract class baseProfile extends AppCompatActivity implements View.OnCl
         }
 
         updateProfileData();
+
+
     }
 
 }
-
