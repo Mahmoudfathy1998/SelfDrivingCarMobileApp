@@ -1,6 +1,8 @@
 package com.example.carapp.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -23,9 +25,10 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 
 public class Reports extends AppCompatActivity {
-    HorizontalBarChart horizontalChart;
     private String userID;
     private ReportsController reportsController;
+    RecyclerView recyclerView;
+    ReportsRecyclerViewAdapter ReportsRecyclerViewAdapter;
 
 
     @Override
@@ -33,41 +36,28 @@ public class Reports extends AppCompatActivity {
         Intent intent = getIntent();
         reportsController = new ReportsController(this);
         userID = intent.getStringExtra("UserID" );
-        showReports(userID);
-        //System.out.println("He5HE5O ID = "+ userID);
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reports);
+        recyclerView = findViewById(R.id.recyclerView);
 
-        horizontalChart = findViewById(R.id.chart1);
-        BarDataSet barDataSet = new BarDataSet(getData(), "");
-        barDataSet.setBarBorderWidth(0.7f);
-        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        BarData barData = new BarData(barDataSet);
-        barData.setBarWidth(0.3f);
-        XAxis xAxis = horizontalChart.getXAxis();
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        final String[] anomalies = new String[]{"AnomaliesNumber"};
-        IndexAxisValueFormatter formatter = new IndexAxisValueFormatter(anomalies);
-        xAxis.setGranularity(1f);
-        xAxis.setValueFormatter(formatter);
-        horizontalChart.setData(barData);
-        horizontalChart.setFitBars(true);
-        horizontalChart.animateXY(3000, 3000);
-        horizontalChart.invalidate();
+        showReports(userID);
+
     }
 
-    private ArrayList getData(){
-        ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(0f, 30f));
-        return entries;
-    }
+
     public void showReports(String UserID){
 
         reportsController.selectReports(UserID, new SelectReportCallBack() {
             @Override
-            public void onSuccess(Report report) {
-                System.out.println("Reports Retrieved.");
+            public void onSuccess(ArrayList<Report> arrayList) {
+                System.out.println(" Reports Retrieved to view.");
+                ReportsRecyclerViewAdapter = new ReportsRecyclerViewAdapter(arrayList, getApplicationContext());
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+                recyclerView.setLayoutManager(linearLayoutManager);
+                recyclerView.setAdapter(ReportsRecyclerViewAdapter);
+
             }
 
             @Override

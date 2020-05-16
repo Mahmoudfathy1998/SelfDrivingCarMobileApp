@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ReportsModel {
@@ -30,7 +31,9 @@ public class ReportsModel {
             @Override
             public void onSuccess(String result) {
                 System.out.println(result);
+                //System.out.println("We are He5o here!");
                 try {
+                    final ArrayList<Report> reportArrayList = new ArrayList<>();
                     JSONObject obj = new JSONObject(result);
                     // error, meessage , array
 
@@ -39,14 +42,19 @@ public class ReportsModel {
                     }
                     else{
                         JSONArray arr = obj.getJSONArray("reports"); // array of json object
-                        final JSONObject reportObject = (JSONObject) arr.get(0);
+                        for(int i =0; i < arr.length(); i++) {
+                            final JSONObject reportObject = (JSONObject) arr.get(i);
+                            final Report report = new Report();
+                            report.setID(reportObject.getInt("ID"));
+                            report.setNumofanomalies(reportObject.getInt("Numofanomalies"));
+                            report.setTripstart(reportObject.getString("Tripstart"));
+                            report.setTripend(reportObject.getString("Tripend"));
+                            report.setDate(reportObject.getString("Date"));
+                            reportArrayList.add(report);
 
-                        final Report report = new Report();
-                        report.setID(reportObject.getInt("ID"));
-                        report.setNumofanomalies(reportObject.getInt("Numofanomalies"));
-                        report.setTripstart(reportObject.getString("Tripstart"));
-                        report.setTripend(reportObject.getString("Tripend"));
-                        report.setDate(reportObject.getString("Date"));
+
+                        }
+                        selectReportCallBack.onSuccess(reportArrayList); //ArrayList
 
                         // usertype object .. car
                         /*final HashMap<String, Integer> conUT = new HashMap<>();

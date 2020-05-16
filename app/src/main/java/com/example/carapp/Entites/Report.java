@@ -1,6 +1,8 @@
 package com.example.carapp.Entites;
 
-public class Report {
+import java.io.Serializable;
+
+public class Report implements Serializable {
 private int ID;
 
     public int getID() {

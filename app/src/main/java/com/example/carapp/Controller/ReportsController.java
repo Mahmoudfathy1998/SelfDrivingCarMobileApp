@@ -6,6 +6,7 @@ import com.example.carapp.Controller.CallBacks.SelectReportCallBack;
 import com.example.carapp.Entites.Report;
 import com.example.carapp.Model.ReportsModel;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ReportsController {
@@ -23,13 +24,16 @@ public class ReportsController {
 
         ReportsModel.selectReports(conditions, new SelectReportCallBack() {
             @Override
-            public void onSuccess(Report report) {
-                selectReport.onSuccess(report);
+            public void onSuccess(ArrayList<Report> arrayList) {
+                selectReport.onSuccess(arrayList);
+                System.out.println("Controller Done");
             }
 
             @Override
             public void onfailure(String reason) {
                 selectReport.onfailure(reason);
+                System.out.println("Controller Error");
+
             }
         });
     }
