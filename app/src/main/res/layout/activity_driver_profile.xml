@@ -13,7 +13,7 @@
             android:id="@+id/layoutHead"
             android:background="#5CC09F"
             android:layout_width="match_parent"
-            android:layout_height="270dp">
+            android:layout_height="250dp">
 
             <ImageView
                 android:id="@+id/image_view"
@@ -31,168 +31,189 @@
                 android:layout_height="wrap_content"/>
 
         </RelativeLayout>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:padding="16dp"
-            android:layout_centerHorizontal="true"
-            android:orientation="vertical"
-            android:layout_below="@id/layoutHead"
-            android:layout_width="360dp"
-            android:layout_height="match_parent">
 
-            <TextView
-                android:textAlignment="center"
-                android:layout_marginTop="260dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:enabled="true"
-                android:id="@+id/Firstname"
-                android:hint="Firstanme:"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/Firstname"
-                android:enabled="true"
-                android:id="@+id/userFirstname"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:enabled="true"
-                android:id="@+id/Lastname"
-                android:hint="Lastname:"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/Lastname"
-                android:enabled="true"
-                android:id="@+id/userLasttname"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:enabled="true"
-                android:id="@+id/Email"
-                android:hint="Email:"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/Email"
-                android:enabled="true"
-                android:id="@+id/userEmail"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:enabled="true"
-                android:id="@+id/Password"
-                android:hint="Password:"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/userEmail"
-                android:enabled="true"
-                android:id="@+id/userPassword"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"/>
-            <TextView
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:enabled="true"
-                android:id="@+id/SerialNum"
-                android:hint="SerialNum:"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/SerialNum"
-                android:enabled="true"
-                android:id="@+id/carSerialNum"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:enabled="true"
-                android:id="@+id/Model"
-                android:hint="ModelName:"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:textAlignment="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/black"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/Model"
-                android:enabled="true"
-                android:id="@+id/Modelname"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/button_save"
-                android:layout_marginTop="15dp"
-                android:textColor="@android:color/black"
-                android:background="?colorPrimary"
-                android:textAllCaps="false"
-                android:layout_gravity="center_horizontal"
-                android:text="Save Changes"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/layoutHead"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        </LinearLayout>
-    </ScrollView>
+                <TextView
+                    android:id="@+id/Firstname"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="260dp"
+                    android:enabled="true"
+                    android:hint="Firstanme:"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/userFirstname"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Firstname"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/Lastname"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:hint="Lastname:"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/userLasttname"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Lastname"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/Email"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:hint="Email:"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/userEmail"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Email"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/PasswordTV"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:hint="Password:"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/userPassword"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userEmail"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/SerialNum"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:hint="SerialNum:"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/carSerialNum"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/SerialNum"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/Model"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:hint="ModelName:"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/Modelname"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Model"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:enabled="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/black" />
+
+                <Button
+                    android:id="@+id/button_save"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="?colorPrimary"
+                    android:text="Save Changes"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+        </ScrollView>
     </RelativeLayout>
 
 </LinearLayout>

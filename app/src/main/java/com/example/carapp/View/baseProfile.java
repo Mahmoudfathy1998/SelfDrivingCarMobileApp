@@ -6,6 +6,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import java.util.HashMap;
 
 public abstract class baseProfile extends AppCompatActivity implements View.OnClickListener{
     private EditText firstNameET, lastNameET, emailET, passET;
+    private TextView passwordTV;
     private Button saveBTN;
     public HashMap<String, String> userHashmap = new HashMap<>();
     protected Context context;
@@ -39,6 +41,8 @@ public abstract class baseProfile extends AppCompatActivity implements View.OnCl
         passET = findViewById(R.id.userPassword);
         saveBTN = findViewById(R.id.button_save);
         saveBTN.setOnClickListener(this);
+
+
         initViews();
         displayUserProfileData();
     }
