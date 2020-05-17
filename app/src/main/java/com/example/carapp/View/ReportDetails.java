@@ -75,7 +75,7 @@ public class ReportDetails extends AppCompatActivity  {
         pieChart.setExtraOffsets(5,10,5,5);
         pieChart.setDragDecelerationFrictionCoef(0.99f);
         pieChart.setDrawHoleEnabled(true);
-        pieChart.setHoleColor(Color.WHITE);
+        pieChart.setHoleColor(Color.TRANSPARENT);
         pieChart.setTransparentCircleRadius(65f);
         pieChart.animateY(2000, Easing.EaseInOutCubic );
         pieChart.getDescription().setEnabled(false);
