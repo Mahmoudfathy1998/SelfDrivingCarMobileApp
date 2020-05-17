@@ -122,7 +122,7 @@
                     android:textColorHint="@color/colorPrimary" />
 
                 <TextView
-                    android:id="@+id/PasswordTV"
+                    android:id="@+id/Password"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -138,7 +138,7 @@
                     android:id="@+id/userPassword"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/userEmail"
+                    android:layout_below="@id/Password"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
                     android:enabled="true"
