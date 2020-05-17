@@ -21,10 +21,12 @@ public class DriverListRecyclerViewAdaptor extends RecyclerView.Adapter<DriverLi
 
     private ArrayList<User> driverArrayList;
     private Context ctx;
+    private int Adid;
 
-    public DriverListRecyclerViewAdaptor(ArrayList<User> driverArrayList, Context ctx) {
+    public DriverListRecyclerViewAdaptor(ArrayList<User> driverArrayList, Context ctx , int Adid) {
         this.driverArrayList = driverArrayList;
         this.ctx = ctx;
+        this.Adid = Adid;
     }
 
     @NonNull
@@ -44,6 +46,7 @@ public class DriverListRecyclerViewAdaptor extends RecyclerView.Adapter<DriverLi
             public void onClick(View v) {
                 Intent intent1 = new Intent(ctx, driverProfile.class);
                 intent1.putExtra("User", driverArrayList.get(position));
+                intent1.putExtra("Usertype" , Adid);
                 ctx.startActivity(intent1);
             }
         });

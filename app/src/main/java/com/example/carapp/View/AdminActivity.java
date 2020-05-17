@@ -33,6 +33,7 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(getApplicationContext(), DriverList.class);
+                intent1.putExtra("User", getIntent().getSerializableExtra("User"));
                 startActivity(intent1);
             }
         });

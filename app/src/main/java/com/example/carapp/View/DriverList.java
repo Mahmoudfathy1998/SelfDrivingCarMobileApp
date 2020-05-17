@@ -23,9 +23,13 @@ public class DriverList extends AppCompatActivity {
     RecyclerView recyclerView;
     DriverListRecyclerViewAdaptor driverListRecyclerViewAdaptor;
     UserController userController;
-
+    User user;
+    int Adid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        user = (User) getIntent().getSerializableExtra("User");
+        Adid = user.getUsertype().getId(); //=1 Admin
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_list);
 
@@ -49,7 +53,8 @@ public class DriverList extends AppCompatActivity {
         userController.selectUserList(new SelectUsersListCallBack() {
             @Override
             public void onSuccess(ArrayList<User> userArrayList) {
-                driverListRecyclerViewAdaptor = new DriverListRecyclerViewAdaptor(userArrayList, getApplicationContext());
+
+                driverListRecyclerViewAdaptor = new DriverListRecyclerViewAdaptor(userArrayList, getApplicationContext() , Adid);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
                 recyclerView.setLayoutManager(linearLayoutManager);
                 recyclerView.setAdapter(driverListRecyclerViewAdaptor);

@@ -3,7 +3,9 @@ package com.example.carapp.View;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.carapp.Controller.CarController;
@@ -18,18 +20,34 @@ import java.util.HashMap;
 
 public class driverProfile extends baseProfile {
 
-    EditText serialNumET, modelLabelET;
+    EditText serialNumET, modelLabelET, passET;
+    TextView Pass;
     public HashMap<String, String> carHashmap = new HashMap<>();
     CarController carController;
+    int Adid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+         //
         setContentView(R.layout.activity_driver_profile);
         this.context=getApplicationContext();
         carController = new CarController(getApplicationContext());
 
         this.user = (User) getIntent().getSerializableExtra("User");
+        Adid = (Integer) getIntent().getIntExtra("Usertype",-1);
+        System.out.println(" ADMIN type ID" + Adid);
+        passET = findViewById(R.id.userPassword);
+        Pass = findViewById(R.id.Password);
+        if (Adid == 1){
+            passET.setEnabled(false);
+            Pass.setEnabled(false);
+            passET.setVisibility(View.INVISIBLE);
+            Pass.setVisibility(View.INVISIBLE);
+
+        }
+
+
 
         setBasicSettings();
         displayProfileData();
