@@ -26,7 +26,7 @@ public class UserController {
 
     public void userLogin(String email, String pass, final LoginCallBack loginCallBack){ // call interface C - V
 
-        HashMap<String, String> con = new HashMap<>(); // 3shan a7ot el haga fe key(Name) w value(sara) -- quary automatic created
+        HashMap<String, String> con = new HashMap<>();
         con.put("email", email);
         con.put("password", pass);
         con.put("isdeleted", "0");
@@ -53,7 +53,7 @@ public class UserController {
         con.put("Firstname", firstName);
         con.put("Lastname", lastName);
         con.put("Email", email);
-        con.put("Password", generatePassword(10)); // auto generated later
+        con.put("Password", generatePassword(10));
         con.put("UsertypeID", "2");
 
         userModel.insertUser(con, new InsertUserCallBack() {

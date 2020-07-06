@@ -23,23 +23,12 @@ public class DriverActivity extends AppCompatActivity {
 
         this.user = (User) getIntent().getSerializableExtra("User");
         setContentView(R.layout.activity_driver);
-        bumpsBTN =  findViewById(R.id.bumps);
-        reportsBTN = findViewById(R.id.reports);
-        distanceBTN = findViewById(R.id.distance);
-        profileBTN =  findViewById(R.id.profileBTN);
-        bumpsBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openbumps();
-            }
-        });
 
-        distanceBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                opendistance();
-            }
-        });
+        reportsBTN = findViewById(R.id.reports);
+
+        profileBTN =  findViewById(R.id.profileBTN);
+
+
         reportsBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

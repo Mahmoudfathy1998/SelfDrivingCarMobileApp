@@ -106,8 +106,6 @@ public class UserModel {
 
                     }
 
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -232,7 +230,7 @@ public class UserModel {
                         String pass = con.get("Password");
                         String name = con.get("Firstname");
                         System.out.println(object.toString());
-                        //System.out.println("IM HERE 7ODA");
+                        //System.out.println("IM HERE hhhh");
 
                         SendMail Passmail = new SendMail(context, mail, "TestMail", "Welcome "+name+ ", Your password is '" +pass+"'");
                         Passmail.execute();

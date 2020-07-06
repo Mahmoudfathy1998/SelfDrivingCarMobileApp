@@ -49,6 +49,7 @@ public class ReportsRecyclerViewAdapter extends RecyclerView.Adapter<ReportsRecy
                 context.startActivity(intent1);
             }
         });
+
         i++;
     }
 

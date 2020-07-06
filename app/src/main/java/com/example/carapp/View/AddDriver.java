@@ -59,7 +59,7 @@ public class AddDriver extends AppCompatActivity {
                 carController.insertCar(serialNum, modelName, id, new VolleyCallBack() {
                     @Override
                     public void onSuccess(String result) {
-                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Driver Added Successfully!", Toast.LENGTH_LONG).show();
                     }
 
                     @Override

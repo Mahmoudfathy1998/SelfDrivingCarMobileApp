@@ -30,6 +30,8 @@ public class RequestApi {
 
             @Override
             public void onResponse(String response) {
+                System.out.println("GAMED YASTA!");
+
                 callback.onSuccess(response);
             }
         },
